@@ -1,4 +1,6 @@
-xml2json: This is java application that convert xml file to json file. It uses mapping json file to intelligently make decisions about which translation (if any) to provide to a given field. This will include processes to change field names, field values and field types.
+# xml2json 
+
+<br/> This is java application that convert xml file to json file. It uses mapping json file to intelligently make decisions about which translation (if any) to provide to a given field. This will include processes to change field names, field values and field types.
 
 Library used: 
     commons-cli: command line parsing
@@ -16,43 +18,6 @@ So if you execute:
 
 java -jar out/xml2json.jar -i data/input.xml -m data/mapping.json
 
+** NOTE: ** Please see the mapping.txt under docs folder that describe mapping instructions.
 
-Result:
------------------INPUT----------------
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<patients>
-    <patient>
-        <id>1234</id>
-        <gender>m</gender>
-        <name>John Smith</name>
-        <state>Michigan</state>
-        <dateOfBirth>03/04/1962</dateOfBirth>
-    </patient>
-    <patient>
-        <id>5678</id>
-        <gender>f</gender>
-        <name>Jane Smith</name>
-        <state>Ohio</state>
-        <dateOfBirth>08/24/1971</dateOfBirth>
-    </patient>
-</patients>
-
------------------OUTPUT----------------
-{
-  "patients" : {
-    "patient" : [ {
-      "name" : "John Smith",
-      "state" : "MI",
-      "patientid" : 1234,
-      "age" : 55,
-      "sex" : "male"
-    }, {
-      "name" : "Jane Smith",
-      "state" : "OH",
-      "patientid" : 5678,
-      "age" : 45,
-      "sex" : "female"
-    } ]
-  }
-}
 
