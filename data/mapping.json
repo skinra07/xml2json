@@ -1,0 +1,105 @@
+{
+  "updates":
+   [
+      {
+        "path": "/patients/patient",
+        "mode": "update",
+        "modifyType" : "name",
+        "actions" :
+        [
+          {
+            "fieldName": "id",
+            "idx": "-1",
+            "match": null,
+            "modifyTo": "patientid"
+          },
+          {
+            "fieldName": "dateOfBirth",
+            "idx": "-1",
+            "match": null,
+            "modifyTo": "age"
+          },
+          {
+            "fieldName": "gender",
+            "idx": "-1",
+            "match": null,
+            "modifyTo": "sex"
+          }
+        ]
+      },
+     {
+       "path": "/patients/patient",
+       "mode": "update",
+       "modifyType" : "value",
+       "actions" :
+       [
+         {
+           "fieldName": "age",
+           "idx": "0",
+           "match": null,
+           "modifyTo": "55"
+         },
+         {
+           "fieldName": "age",
+           "idx": "1",
+           "match": null,
+           "modifyTo": "45"
+         },
+         {
+           "fieldName": "sex",
+           "idx": "-1",
+           "match":
+           {
+             "activity" : "replace",
+             "condition": "equals",
+             "pattern": "m"
+           },
+           "modifyTo": "male"
+         },
+         {
+           "fieldName": "sex",
+           "idx": "-1",
+           "match":
+           {
+             "activity" : "replace",
+             "condition": "equals",
+             "pattern": "f"
+           },
+           "modifyTo": "female"
+         },
+         {
+           "fieldName": "state",
+           "idx": "0",
+           "match": null,
+           "modifyTo": "MI"
+         },
+         {
+           "fieldName": "state",
+           "idx": "1",
+           "match":
+           {
+             "activity" : "stateAbbr"
+           },
+           "modifyTo": null
+         }
+       ]
+     },
+     {
+       "path": "/patients/patient",
+       "mode": "update",
+       "modifyType": "type",
+       "actions": [
+         {
+           "fieldName": "age",
+           "idx": "-1",
+           "match":
+           {
+             "activity" : "convert",
+             "condition": "integerType"
+           },
+           "modifyTo": null
+         }
+       ]
+     }
+   ]
+}
